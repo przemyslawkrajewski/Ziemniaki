@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 
 #define MAX 100
 
