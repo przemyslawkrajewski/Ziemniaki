@@ -1,4 +1,4 @@
 cmake_minimum_required (VERSION 2.8)
-PROJECT(Ziemniaki)
+PROJECT(flood_test)
 
-add_executable(Ziemniaki src/main.cpp)
+add_executable(flood_test src/main.cpp)
