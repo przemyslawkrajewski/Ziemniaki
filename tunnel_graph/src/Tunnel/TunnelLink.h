@@ -10,7 +10,6 @@
 
 #include "TunnelElement.h"
 
-//TODO should be protected
 class TunnelLink : public TunnelElement
 {
 public:
@@ -20,6 +19,9 @@ public:
 	Point getNode1Coordinates() {return node1->getCoordinates();}
 	Point getNode2Coordinates() {return node2->getCoordinates();}
 	double getWidth() {return width;}
+
+private:
+	virtual Point getCoordinates() {return Point();};
 
 private:
 	TunnelElement *node1;

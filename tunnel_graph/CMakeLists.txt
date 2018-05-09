@@ -1,5 +1,7 @@
 SET(CMAKE_INSTALL_PREFIX .)
 
+set (CMAKE_CXX_STANDARD 17)
+
 PROJECT(tunnel_graph)
 cmake_minimum_required (VERSION 2.8)
 

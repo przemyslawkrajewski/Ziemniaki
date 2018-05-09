@@ -12,7 +12,6 @@
 
 #include "TunnelElement.h"
 
-//TODO should be protected
 class TunnelNode : public TunnelElement
 {
 public:

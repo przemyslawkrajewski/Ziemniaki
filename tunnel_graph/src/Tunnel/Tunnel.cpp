@@ -18,7 +18,7 @@ Tunnel::Tunnel()
 	tunnelNodes.push_back(TunnelNode(Point(120,200,40),10));
 
 	std::vector<TunnelNode*> ptrs;
-	for(std::list<TunnelNode>::iterator it = tunnelNodes.begin(); it != tunnelNodes.end() ;it++)
+	for(auto it = tunnelNodes.begin(); it != tunnelNodes.end() ;it++)
 	{
 		ptrs.push_back(&(*it));
 	}
@@ -46,7 +46,7 @@ void Tunnel::printTunnels()
 		}
 	}
 
-	for(std::list<TunnelNode>::iterator it = tunnelNodes.begin(); it != tunnelNodes.end() ;it++)
+	for(auto it = tunnelNodes.begin(); it != tunnelNodes.end() ;it++)
 	{
 		cv::Point p;
 		p.x = it->getCoordinates().x;
@@ -54,7 +54,7 @@ void Tunnel::printTunnels()
 		cv::circle(img, p,it->getRadius(), cv::Scalar(255,255,255), CV_FILLED);
 	}
 
-	for(std::list<TunnelLink>::iterator it = tunnelLinks.begin(); it != tunnelLinks.end() ;it++)
+	for(auto it = tunnelLinks.begin(); it != tunnelLinks.end() ;it++)
 	{
 		cv::Point p1;
 		p1.x = it->getNode1Coordinates().x;
