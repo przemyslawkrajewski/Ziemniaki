@@ -10,25 +10,21 @@
 
 #include <assert.h>
 #include <math.h>
+#include <utility>
 
-#include "TunnelElement.h"
-
-class TunnelLink : public TunnelElement
+class TunnelLink
 {
 public:
-	TunnelLink(TunnelElement *n1, TunnelElement *n2, double w);
-	virtual ~TunnelLink();
+	using NodesPair = std::pair<TunnelNode*,TunnelNode*>;
 
-	virtual Point getNode1Coordinates() {return node1->getCoordinates();}
-	virtual Point getNode2Coordinates() {return node2->getCoordinates();}
+	TunnelLink(TunnelNode *n1, TunnelNode *n2, double w);
+	~TunnelLink();
+
 	double getWidth() {return width;}
+	NodesPair* getNodes() { return &nodes;}
 
 private:
-	virtual Point getCoordinates() {assert(!"Tunnel link can't use getCoordinates() method");};
-
-private:
-	TunnelElement *node1;
-	TunnelElement *node2;
+	NodesPair nodes;
 
 	double width;
 	double lenght{-1};

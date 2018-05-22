@@ -59,12 +59,12 @@ void Tunnel::printTunnels()
 	for(auto it = tunnelLinks.begin(); it != tunnelLinks.end() ;it++)
 	{
 		cv::Point p1;
-		p1.x = it->getNode1Coordinates().x;
-		p1.y = it->getNode1Coordinates().y;
+		p1.x = it->getNodes()->first->getCoordinates().x;
+		p1.y = it->getNodes()->first->getCoordinates().y;
 
 		cv::Point p2;
-		p2.x = it->getNode2Coordinates().x;
-		p2.y = it->getNode2Coordinates().y;
+		p2.x = it->getNodes()->second->getCoordinates().x;
+		p2.y = it->getNodes()->second->getCoordinates().y;
 		cv::line(img, p1, p2, cv::Scalar(255,255,255), it->getWidth());
 	}
 

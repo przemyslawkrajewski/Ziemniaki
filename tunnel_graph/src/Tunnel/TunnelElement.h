@@ -8,6 +8,9 @@
 #ifndef SRC_TUNNEL_TUNNELELEMENT_H_
 #define SRC_TUNNEL_TUNNELELEMENT_H_
 
+class TunnelLink;
+class TunnelNode;
+
 struct Point
 {
 	Point()
@@ -29,18 +32,7 @@ struct Point
 	double z;
 };
 
-class TunnelElement
-{
-public:
-	enum Resource {Food,Coal};
-
-public:
-	TunnelElement();
-	virtual ~TunnelElement();
-
-	virtual Point getCoordinates() = 0;
-	virtual Point getNode1Coordinates() = 0;
-	virtual Point getNode2Coordinates() = 0;
-};
+#include "TunnelNode.h"
+#include "TunnelLink.h"
 
 #endif /* SRC_TUNNEL_TUNNELELEMENT_H_ */

@@ -11,8 +11,7 @@
 #include <opencv2/opencv.hpp>
 #include <list>
 
-#include "TunnelNode.h"
-#include "TunnelLink.h"
+#include "TunnelElement.h"
 
 class Tunnel
 {

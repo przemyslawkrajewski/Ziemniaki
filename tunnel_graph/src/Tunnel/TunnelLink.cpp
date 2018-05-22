@@ -5,12 +5,11 @@
  *      Author: przemo
  */
 
-#include "TunnelLink.h"
+#include "TunnelElement.h"
 
-TunnelLink::TunnelLink(TunnelElement *n1, TunnelElement *n2, double w)
+TunnelLink::TunnelLink(TunnelNode *n1, TunnelNode *n2, double w)
 {
-	node1 = n1;
-	node2 = n2;
+	nodes = std::pair<TunnelNode*,TunnelNode*>(n1,n2);
 	width = w;
 }
 

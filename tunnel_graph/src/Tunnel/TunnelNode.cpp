@@ -5,7 +5,7 @@
  *      Author: przemo
  */
 
-#include "TunnelNode.h"
+#include "TunnelElement.h"
 
 TunnelNode::TunnelNode()
 {

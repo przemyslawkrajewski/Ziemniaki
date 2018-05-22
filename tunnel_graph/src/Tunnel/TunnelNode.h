@@ -10,23 +10,18 @@
 
 #include <assert.h>
 
-#include "TunnelElement.h"
-
-class TunnelNode : public TunnelElement
+class TunnelNode
 {
 public:
 	TunnelNode();
 	TunnelNode(Point coords, double rad);
-	virtual ~TunnelNode();
+	~TunnelNode();
 
-	virtual Point getCoordinates() { return coordinates;}
+	Point getCoordinates() { return coordinates;}
 	double getRadius() { return radius;}
 
 private:
-	virtual Point getNode1Coordinates() {assert(!"Tunnel node can't use getNode1Coordinates() method");}
-	virtual Point getNode2Coordinates() {assert(!"Tunnel node can't use getNode2Coordinates() method");}
-
-private:
+	TunnelLink *link; //TODO temporary
 	Point coordinates;
 	double radius;
 };
