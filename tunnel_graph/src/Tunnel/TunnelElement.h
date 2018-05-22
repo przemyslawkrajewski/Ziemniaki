@@ -11,6 +11,8 @@
 class TunnelLink;
 class TunnelNode;
 
+using WaypointCost = double;
+
 struct Point
 {
 	Point()

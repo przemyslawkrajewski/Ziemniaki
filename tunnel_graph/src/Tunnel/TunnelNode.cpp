@@ -26,3 +26,15 @@ TunnelNode::TunnelNode(Point coords, double rad)
 	coordinates = coords;
 	radius = rad;
 }
+
+
+void TunnelNode::addTunnelLink(TunnelLink *link)
+{
+	links.push_back(link);
+
+	//Cost to the closest neighbor
+	tunnelWaypoints.insert(TunnelWaypointPair(link->getOtherTunnelNode(this),link->getWaypointCost()));
+
+	//Recieving from neighbor costs to other nodes
+	//TODO
+}

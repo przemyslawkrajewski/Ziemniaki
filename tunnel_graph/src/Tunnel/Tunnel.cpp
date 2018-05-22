@@ -16,6 +16,7 @@ Tunnel::Tunnel()
 	tunnelNodes.push_back(TunnelNode(Point(200,400,0),10));
 	tunnelNodes.push_back(TunnelNode(Point(400,200,0),10));
 	tunnelNodes.push_back(TunnelNode(Point(600,50,0),10));
+	tunnelNodes.push_back(TunnelNode(Point(600,400,0),10));
 
 	std::vector<TunnelNode*> ptrs;
 	for(auto it = tunnelNodes.begin(); it != tunnelNodes.end() ;it++)
@@ -29,6 +30,8 @@ Tunnel::Tunnel()
 	tunnelLinks.push_back(TunnelLink(ptrs[1],ptrs[3],5));
 	tunnelLinks.push_back(TunnelLink(ptrs[2],ptrs[3],5));
 	tunnelLinks.push_back(TunnelLink(ptrs[4],ptrs[3],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[2],ptrs[5],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[4],ptrs[5],5));
 }
 
 //TODO to remove later
