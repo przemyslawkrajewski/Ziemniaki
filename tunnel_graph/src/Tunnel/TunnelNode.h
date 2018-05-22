@@ -8,7 +8,7 @@
 #ifndef SRC_TUNNEL_TUNNELNODE_H_
 #define SRC_TUNNEL_TUNNELNODE_H_
 
-#include <vector>
+#include <assert.h>
 
 #include "TunnelElement.h"
 
@@ -21,6 +21,11 @@ public:
 
 	virtual Point getCoordinates() { return coordinates;}
 	double getRadius() { return radius;}
+
+private:
+	virtual Point getNode1Coordinates() {assert(!"Tunnel node can't use getNode1Coordinates() method");}
+	virtual Point getNode2Coordinates() {assert(!"Tunnel node can't use getNode2Coordinates() method");}
+
 private:
 	Point coordinates;
 	double radius;

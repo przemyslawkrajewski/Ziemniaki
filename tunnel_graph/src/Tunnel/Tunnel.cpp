@@ -11,11 +11,11 @@
 Tunnel::Tunnel()
 {
 	//Temporary for testing
-	tunnelNodes.push_back(TunnelNode(Point(250,100,40),5));
-	tunnelNodes.push_back(TunnelNode(Point(450,100,40),20));
-	tunnelNodes.push_back(TunnelNode(Point(50,90,40),10));
-	tunnelNodes.push_back(TunnelNode(Point(200,250,40),30));
-	tunnelNodes.push_back(TunnelNode(Point(120,200,40),10));
+	tunnelNodes.push_back(TunnelNode(Point(50,200,0),10));
+	tunnelNodes.push_back(TunnelNode(Point(200,50,0),10));
+	tunnelNodes.push_back(TunnelNode(Point(200,400,0),10));
+	tunnelNodes.push_back(TunnelNode(Point(400,200,0),10));
+	tunnelNodes.push_back(TunnelNode(Point(600,50,0),10));
 
 	std::vector<TunnelNode*> ptrs;
 	for(auto it = tunnelNodes.begin(); it != tunnelNodes.end() ;it++)
@@ -23,10 +23,12 @@ Tunnel::Tunnel()
 		ptrs.push_back(&(*it));
 	}
 
-	tunnelLinks.push_back(TunnelLink(ptrs[0],ptrs[1],2));
-	tunnelLinks.push_back(TunnelLink(ptrs[1],ptrs[3],7));
-	tunnelLinks.push_back(TunnelLink(ptrs[3],ptrs[4],10));
-	tunnelLinks.push_back(TunnelLink(ptrs[3],ptrs[2],1));
+	tunnelLinks.push_back(TunnelLink(ptrs[0],ptrs[1],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[0],ptrs[2],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[1],ptrs[2],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[1],ptrs[3],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[2],ptrs[3],5));
+	tunnelLinks.push_back(TunnelLink(ptrs[4],ptrs[3],5));
 }
 
 //TODO to remove later

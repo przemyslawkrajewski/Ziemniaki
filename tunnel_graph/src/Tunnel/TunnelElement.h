@@ -32,10 +32,15 @@ struct Point
 class TunnelElement
 {
 public:
+	enum Resource {Food,Coal};
+
+public:
 	TunnelElement();
 	virtual ~TunnelElement();
 
-	virtual Point getCoordinates() {return Point();};
+	virtual Point getCoordinates() = 0;
+	virtual Point getNode1Coordinates() = 0;
+	virtual Point getNode2Coordinates() = 0;
 };
 
 #endif /* SRC_TUNNEL_TUNNELELEMENT_H_ */
